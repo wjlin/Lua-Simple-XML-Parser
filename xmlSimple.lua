@@ -129,6 +129,7 @@ function newNode(name)
     node.___props = {}
 
     function node:value() return self.___value end
+    function node:cdata() return string.match(self.___value,"<!%[CDATA%[(.+)%]%]>") end
     function node:setValue(val) self.___value = val end
     function node:name() return self.___name end
     function node:setName(name) self.___name = name end
